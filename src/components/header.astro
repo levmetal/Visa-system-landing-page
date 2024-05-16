@@ -1,26 +1,25 @@
 ---
 import { Icon } from "astro-icon/components";
-import ThemeSwitcher from "~/components/theme-switcher.astro";
+import Cta from "~/components/cta.astro";
 import type { NavItem } from "~/types";
 
 const navItems: Array<NavItem> = [
-  { title: "Features", url: "#features" },
-  { title: "Compatibility", url: "#compatibility" },
-  { title: "Showcase", url: "#showcase" },
+  { title: "Home", url: "/" },
+  { title: "Kind of visas", url: "#visas" },
+  { title: "FAQ", url: "#faq" },
+  { title: "About us", url: "#about" },
 ];
 ---
 
 <header
   id="page-header"
-  class="absolute bottom-0 z-20 flex w-full items-center justify-between border-b border-transparent px-8 py-4 text-white"
+  class="headerbg absolute bottom-0 z-50 flex w-full items-center justify-between border-b border-transparent px-8 py-4 text-white"
 >
   <a class="flex items-center gap-3 hover:!text-default" href="#">
-    <h1 class="sr-only">Astro</h1>
-    <Icon name="logomark" class="size-10" />
-    <Icon name="wordmark" class="hidden h-4 sm:block" />
+    <img src="logovisa.svg" alt="logo" class="logoheader ml-14 size-16" />
   </a>
   <div>
-    <div class="flex items-center gap-6">
+    <div class="flex items-center gap-6 align-top">
       <nav class="hidden sm:block">
         <ul class="flex items-center gap-6">
           {
@@ -34,6 +33,7 @@ const navItems: Array<NavItem> = [
           }
         </ul>
       </nav>
+      <Cta />
       <button
         id="open-nav-button"
         type="button"
@@ -42,7 +42,6 @@ const navItems: Array<NavItem> = [
       >
         <Icon name="mdi:menu" class="size-8" />
       </button>
-      <ThemeSwitcher />
     </div>
     <div id="menu-modal" class="modal hidden" aria-hidden="true">
       <div class="fixed inset-0 bg-default px-8 py-4 text-default">
@@ -58,7 +57,7 @@ const navItems: Array<NavItem> = [
             </button>
           </header>
           <div class="flex justify-center">
-            <Icon name="logomark" class="size-16" />
+            <img src="logovisa.svg" alt="logo" class="size-16" />
           </div>
           <nav>
             <ul class="flex flex-col">
@@ -128,11 +127,30 @@ const navItems: Array<NavItem> = [
 </noscript>
 
 <style>
+  .headerbg {
+    z-index: 1000;
+    bottom: -1rem;
+    background: rgb(12, 30, 90);
+    background: linear-gradient(
+      0deg,
+      rgba(12, 30, 90, 1) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  }
   .fixed-header {
     @apply fixed bottom-auto top-0;
     @apply border-default bg-default text-default;
   }
   .modal.is-open {
     @apply block;
+  }
+
+  @media only screen and (max-width: 900px) {
+    .headerbg {
+      justify-content: space-around;
+    }
+    .logoheader {
+      margin: 0;
+    }
   }
 </style>

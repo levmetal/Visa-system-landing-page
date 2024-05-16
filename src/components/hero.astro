@@ -1,0 +1,121 @@
+---
+import { Image } from "astro:assets";
+import edificio from "~/assets/edificiofix.png";
+const widths = [350, 800, 1045];
+
+---
+
+<section class="hero relative h-full px-8">
+  <div class="headline_container">
+    <h1 class="z-100 headline">
+      <span> Get</span> your visa <br /> fast & <span>easy</span>
+    </h1>
+
+    <p class="description">
+      We process your visa application <br /> quickly and clearly
+    </p>
+
+    <a role="button" class="cta rounded">Get Started</a>
+  </div>
+  <div class="imgradial"></div>
+
+  <Image
+    class="edificio absolute right-0 h-full"
+    src={edificio}
+    widths={widths}
+    loading="eager"
+    alt="A floating astronaut in a space suit"
+  />
+</section>
+
+<noscript>
+  <style>
+    #splash-bg-fallback {
+      display: block;
+    }
+  </style>
+</noscript>
+
+<style>
+  .hero {
+    display: flex;
+    align-items: center;
+    padding: 0 32px;
+    overflow: hidden;
+  }
+
+  .headline_container {
+    font-family: "Roboto Condensed", sans-serif;
+    height: 50vh;
+    margin-left: 8rem;
+
+    z-index: 101;
+  }
+  .headline {
+    font-size: 4.5rem;
+    line-height: 5rem;
+  }
+  .headline span {
+    color: #8cb2d1;
+  }
+  .description {
+    font-family: "Roboto", sans-serif;
+    font-weight: lighter;
+    margin-top: 1rem;
+  }
+
+  .imgradial {
+    position: absolute;
+
+    left: -20%;
+    top: 0;
+    height: 120vh;
+    width: 180vh;
+
+    background: rgb(12, 30, 90);
+    background: radial-gradient(
+      circle,
+      rgba(12, 30, 90, 1) 0%,
+      rgba(9, 26, 77, 1) 50%,
+      rgba(12, 30, 90, 0) 85%
+    );
+  }
+
+  .cta {
+    color: inherit;
+    position: absolute;
+    margin-top: 2.5rem;
+    background-color: var(--accentcolor);
+    transition: 300ms;
+    padding: 0.5rem 1rem;
+    box-shadow: 0px 0px 15px -8px #8cb2d1;
+  }
+  .cta:hover {
+    color: rgba(255, 255, 255, 1);
+    box-shadow: 0px 5px 15px #8cb2d1;
+  }
+  @media only screen and (max-width: 900px) {
+    .hero {
+      justify-content: center;
+    }
+    .headline {
+      margin-left: 0;
+      font-size: 3.5rem;
+    }
+    .headline_container {
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+      text-align: center;
+      justify-content: center;
+    }
+    .cta {
+      position: relative;
+    }
+    .imgradial {
+      left: -45%;
+      top: -10%;
+      opacity: 0.8;
+    }
+  }
+</style>

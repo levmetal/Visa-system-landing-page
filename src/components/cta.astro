@@ -1,0 +1,27 @@
+<a
+  id="ctaid"
+  role="button"
+  class="cta -ml-12 origin-[right_center] scale-0 rounded"
+  scale-0
+  transition-all
+  duration-500>Get Started</a
+>
+
+<style>
+  .cta {
+    color: inherit;
+
+    background-color: var(--accentcolor);
+    transition: 300ms;
+    padding: 0.5rem 1rem;
+    box-shadow: 0px 0px 15px -8px #8cb2d1;
+  }
+  .cta:hover {
+    color: rgba(255, 255, 255, 1);
+    box-shadow: 0px 5px 15px #8cb2d1;
+  }
+
+  :global(.fixed-header) #ctaid {
+    @apply ml-0 scale-100;
+  }
+</style>

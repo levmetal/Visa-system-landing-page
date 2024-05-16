@@ -1,4 +1,16 @@
 /* TODO: consider creating <Button> and <GradientText> components */
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+:root {
+  font-family: Roboto, sans-serif;
+  --darkblue: #091a4d;
+  --darkblue2: #0c1e5a;
+  --lightblue: #8cb2d1;
+  --accentcolor: #761932;
+}
+
 a,
 .btn {
   @apply transition-colors duration-200;
@@ -8,5 +20,14 @@ a,
 
 .gradient-text {
   @apply bg-clip-text text-transparent;
-  @apply bg-gradient-to-br from-indigo-500 via-fuchsia-500 to-pink-500;
+  @apply bg-gradient-to-br from-white via-cyan-500 to-cyan-700;
+}
+.imgradial {
+  translate: 0rem 0rem;
+  z-index: 100;
+}
+
+@media (min-width: 768px) {
+  .imgradial {
+  }
 }

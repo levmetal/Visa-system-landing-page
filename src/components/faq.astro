@@ -1,0 +1,223 @@
+---
+import ContentSection from "./content-section.astro";
+---
+
+<ContentSection title="Frequently Asked Questions" id="faq">
+  <section class="container">
+    <div class="container_questions">
+      <div class="title_container">
+        <div class="line"></div>
+
+        <h3>FAQ</h3>
+      </div>
+      <div class="layout">
+        <div class="accordion">
+          <div class="accordion__question">
+            <p>Proven Track Record</p>
+          </div>
+          <div class="accordion__answer">
+            <p>
+              Our vast network of experienced immigration attorneys, including
+              former U.S. consular staff and expert advisors, boasts over
+              500,000 processed visa and ESTA applications. Gain access to this
+              wealth of knowledge and expertise instantly.
+            </p>
+          </div>
+        </div>
+
+        <div class="accordion">
+          <div class="accordion__question">
+            <p>How long does it take to get a U.S. visa ?</p>
+          </div>
+
+          <div class="accordion__answer">
+            <p>
+              We will get back to you promptly. Simply contact us and provide as
+              much detail as possible about your situation for a more accurate
+              understanding of the U.S. visa timeline. Our mission is to
+              expedite your visa application process from beginning to end. The
+              Visa System offers expedited services to significantly accelerate
+              various parts of the visa process, including scheduling
+              appointments.
+            </p>
+          </div>
+        </div>
+        <div class="accordion">
+          <div class="accordion__question">
+            <p>How can i pay the service ?</p>
+          </div>
+
+          <div class="accordion__answer">
+            <p>
+              We offer two convenient payment options for your visa application
+              service: PayPal for secure online payments using your existing
+              account, or bank transfer to our designated account in the United
+              States (details provided during application).
+            </p>
+          </div>
+        </div>
+        <div class="accordion">
+          <div class="accordion__question">
+            <p>
+              I plan on going to study in the U.S. Can you help me obtain a
+              student visa ?
+            </p>
+          </div>
+
+          <div class="accordion__answer">
+            <p>
+              Absolutely! We guide students worldwide with US student visas
+              (accepted students only & SEVIS ID required). Contact us to begin!
+            </p>
+          </div>
+        </div>
+        <div class="accordion">
+          <div class="accordion__question">
+            <p>Can I use the B1 Visa to work in the U.S. for any time ?</p>
+          </div>
+
+          <div class="accordion__answer">
+            <p>
+              No, B1 visas are for short business trips, not work. Exception:
+              personal/domestic workers with EAD (work permit) for US citizen
+              abroad or legal resident with specific visa types (B, E, F, etc.).
+            </p>
+          </div>
+        </div>
+        <div class="accordion">
+          <div class="accordion__question">
+            <p>Can I travel even if there is a travel ban ?</p>
+          </div>
+
+          <div class="accordion__answer">
+            <p>
+              It depends on the situation. You might travel if you qualify for
+              the <a
+                href="https://travel.state.gov/content/travel/en/News/visas-news.html"
+                >National Interest Exception</a
+              > .
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <img src="faqimg1.png" alt="a women reading" />
+  </section>
+</ContentSection>
+<script>
+  let answers = document.querySelectorAll(".accordion");
+  answers.forEach((event) => {
+    event.addEventListener("click", () => {
+      if (event.classList.contains("active")) {
+        event.classList.remove("active");
+      } else {
+        event.classList.add("active");
+      }
+    });
+  });
+</script>
+<style>
+  .title_container {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+  }
+  .title_container h3 {
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--lightblue);
+  }
+  .line {
+    height: 0.1rem;
+    width: 3rem;
+    background-color: var(--accentcolor);
+    margin-left: 1rem;
+  }
+  .container {
+    display: flex;
+    justify-content: center;
+    position: relative;
+
+    height: auto;
+  }
+  .container img {
+    position: absolute;
+    height: auto;
+    width: 40%;
+    transform: translate(60%, 15%);
+  }
+  .container_questions {
+    background: #333333;
+    width: 60%;
+    z-index: 1;
+    transform: translate(-15%, -1%);
+    padding: 3rem 1rem;
+    box-shadow: 15px 0 10px 10px hsla(0, 0%, 0%, 0.096);
+  }
+  .layout {
+    width: 100%;
+    margin: auto;
+  }
+
+  .accordion {
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background: #333333;
+    border-radius: 10px;
+  }
+
+  .accordion__question p {
+    margin: 5px;
+    padding: 0;
+    font-size: 20px;
+  }
+
+  .accordion__answer p {
+    margin: 5px;
+    padding: 10px;
+    font-size: 18px;
+
+    color: rgb(255, 255, 255);
+    background: var(--darkblue2);
+    border-radius: 10px;
+
+    transition: 1s;
+  }
+
+  .accordion:hover {
+    cursor: pointer;
+  }
+
+  .accordion__answer {
+    display: none;
+  }
+
+  .accordion.active .accordion__answer {
+    display: block;
+  }
+  @media only screen and (max-width: 900px) {
+    .container img {
+      display: none;
+    }
+    .container {
+      width: 100%;
+    }
+    .container_questions {
+      width: 100%;
+      padding: 0;
+      transform: none;
+    }
+    .accordion__answer p {
+      font-size: 16px;
+      line-height: 1.8;
+    }
+    .title_container {
+      padding-top: 2rem;
+    }
+    .line {
+      height: 0.25rem;
+      border-radius: 15%;
+    }
+  }
+</style>

@@ -1,0 +1,243 @@
+---
+import ContentSection from "./content-section.astro";
+import tourism from "~/assets/tourism.png";
+import business from "~/assets/business.png";
+import study from "~/assets/study.png";
+import transit from "~/assets/transit.png";
+import medical from "~/assets/medical.png";
+
+import { Image } from "astro:assets";
+---
+
+<ContentSection title="kind of visas" id="kindvisa">
+  <section class="kindvisa_container" id="visas">
+    <div class="card">
+      <div class="titledescription">
+        <img src="01.png" alt="number" class="number_title" />
+        <div class="title_container">
+          <div class="line"></div>
+          <h3>TOURISM OR VISIT</h3>
+        </div>
+        <div class="description_container">
+          <p>
+            Do you dream of exploring new horizons and vibrant cultures? Visa
+            System opens the door to a world of possibilities. We are the
+            leading company in comprehensive tourist visa management, with a
+            team of experts who take care of all the paperwork and bureaucracy
+            so you can focus on enjoying your trip.
+          </p>
+        </div>
+      </div>
+      <div class="img_description">
+        <Image
+          class="imgdesc right-0"
+          src={tourism}
+          loading="eager"
+          alt="men in a exotic place"
+        />
+      </div>
+    </div>
+    <!-- 01 -->
+    <div class="card">
+      <div class="titledescription">
+        <img src="02.png" alt="number" class="number_title" />
+        <div class="title_container">
+          <div class="line"></div>
+          <h3>TRANSIT</h3>
+        </div>
+        <div class="description_container">
+          <p>
+            Traveling with a layover in a foreign country? Visa System
+            simplifies your transit visa management, ensuring a stress-free and
+            seamless travel experience.
+          </p>
+        </div>
+      </div>
+      <div class="img_description">
+        <Image
+          class="imgdesc right-0"
+          src={transit}
+          loading="eager"
+          alt="A floating astronaut in a space suit"
+        />
+      </div>
+    </div>
+    <!-- 02 -->
+    <div class="card">
+      <div class="titledescription">
+        <img src="03.png" alt="number" class="number_title" />
+        <div class="title_container">
+          <div class="line"></div>
+          <h3>BUSINESS</h3>
+        </div>
+        <div class="description_container">
+          <p>
+            Streamlining Your Global Business Travel Expanding your business
+            reach requires seamless travel across borders. Visa System is your
+            trusted partner in navigating the complexities of business visa
+            applications, our team of experts simplifies the process.
+          </p>
+        </div>
+      </div>
+      <div class="img_description">
+        <Image
+          class="imgdesc right-0"
+          src={business}
+          loading="eager"
+          alt="two mens talking"
+        />
+      </div>
+    </div>
+    <!-- 03 -->
+    <div class="card">
+      <div class="titledescription">
+        <img src="04.png" alt="number" class="number_title" />
+        <div class="title_container">
+          <div class="line"></div>
+          <h3>STUDY</h3>
+        </div>
+        <div class="description_container">
+          <p>
+            Your Gateway to Academic Success Embark on your international
+            education journey with peace of mind. Visa System simplifies the
+            complexities of student visas, allowing you to focus on achieving
+            your academic goals.
+          </p>
+        </div>
+      </div>
+      <div class="img_description">
+        <Image
+          class="imgdesc right-0"
+          src={study}
+          loading="eager"
+          alt="young people studyng"
+        />
+      </div>
+    </div>
+    <!-- 04 -->
+    <div class="card">
+      <div class="titledescription">
+        <img src="05.png" alt="number" class="number_title" />
+        <div class="title_container">
+          <div class="line"></div>
+          <h3>MEDICAL</h3>
+        </div>
+        <div class="description_container">
+          <p>
+            Your Trusted Partner for Medical Travel Seeking specialized medical
+            care abroad? Visa System simplifies the often complex process of
+            obtaining a medical visa, ensuring a smooth and stress-free journey
+            towards your well-being.
+          </p>
+        </div>
+      </div>
+      <div class="img_description">
+        <Image
+          class="imgdesc right-0"
+          src={medical}
+          loading="eager"
+          alt="doctor and his assistant doing a surgery"
+        />
+      </div>
+    </div>
+    <!-- 05 -->
+  </section>
+</ContentSection>
+
+<style>
+  .kindvisa_container {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+
+    min-height: 100vh;
+  }
+  .number_title {
+    width: 4rem;
+    height: auto;
+    margin-bottom: -1.5rem;
+  }
+  .title_container {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+  }
+  .line {
+    height: 0.1rem;
+    width: 4rem;
+    background-color: var(--accentcolor);
+  }
+  .card {
+    display: flex;
+
+    justify-content: space-around;
+  }
+
+  h3 {
+    font-weight: bold;
+    letter-spacing: 3px;
+    font-size: 28px;
+    font-family: "Roboto Condensed", sans-serif;
+    color: var(--lightblue);
+  }
+
+  .titledescription {
+    display: flex;
+    flex-direction: column;
+    width: min(75ch, 50%);
+    gap: 2rem;
+  }
+  .description_container {
+    font-size: 18px;
+    line-height: 1.7;
+    font-weight: 200;
+  }
+
+  .img_description {
+    height: auto;
+    width: 300px;
+  }
+
+  .card:nth-child(even) .titledescription {
+    order: 2;
+  }
+  @media only screen and (max-width: 900px) {
+    .card {
+      flex-direction: column;
+      position: relative;
+      justify-content: center;
+    }
+    .titledescription {
+      width: min(75ch, 100%);
+    }
+
+    .img_description {
+      display: none;
+    }
+    .line {
+      height: 0.25rem;
+      border-radius: 15%;
+    }
+  }
+  @media only screen and (min-width: 600px) and (max-width: 900px) {
+    .card {
+      align-items: center;
+    }
+    .titledescription {
+      width: min(75ch, 70%);
+      z-index: 10;
+    }
+    .img_description {
+      display: flex;
+      opacity: 0.6;
+      transform: translateY(-80%) translateX(45%);
+      border-radius: 15%;
+    }
+    .img_description img {
+      border-radius: 2%;
+    }
+    .card:nth-child(even) .titledescription {
+      order: unset;
+    }
+  }
+</style>
